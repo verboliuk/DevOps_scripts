@@ -4,7 +4,7 @@ jobs:
     docker:
       - image: circleci/golang:1.15
         auth:
-          username: mdsn
+          username: verboliuk
           password: $DOCKERHUB_PASSWORD
     steps:
       - checkout
@@ -14,6 +14,6 @@ jobs:
 
       - run: |
           TAG=0.1.$CIRCLE_BUILD_NUM
-          docker build -t mdsn/circleci-demo-docker:$TAG .
-          docker login -u mdsn -p $DOCKERHUB_PASSWORD
-          docker push mdsn/circleci-demo-docker:$TAG
+          docker build -t verboliuk/circleci-demo-docker:$TAG .
+          docker login -u verboliuk -p $DOCKERHUB_PASSWORD
+          docker push verboliuk/circleci-demo-docker:$TAG
